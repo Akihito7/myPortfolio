@@ -85,7 +85,7 @@ p{
 }
 Header{
     transition: transform 400ms;
-    translate: -200px;
+    translate: -100%;
     align-items: center;
     position: fixed;
     width: 180px;
