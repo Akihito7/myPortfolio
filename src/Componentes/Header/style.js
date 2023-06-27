@@ -41,5 +41,8 @@ img{
 img:hover{
     transform: scale(1.1);
 }
+.isActive{
+    display: none;
+}
 
 `

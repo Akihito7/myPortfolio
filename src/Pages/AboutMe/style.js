@@ -101,10 +101,21 @@ main{
     gap: 2rem;
     padding: 3rem;
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.hardSkills{
+    
+    min-height: 20rem;
+}
+.sobremim{
+    padding-top: 2rem;
+    min-height: 20rem;
 }
 
 .open{
-    transform: translateX(200px);
+    transform: translateX(100%);
 }
 
 }

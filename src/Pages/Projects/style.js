@@ -1,9 +1,12 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.div`
-
+position: relative;
 display: flex;
 background-color: black;
+
+min-height: 100vh;
+width: 100vw;
 
 *{
     margin: 0;
@@ -12,6 +15,7 @@ background-color: black;
     box-sizing: border-box;
 
 }
+
 #menuFechado{
     display: none;
 }
@@ -112,19 +116,20 @@ p{
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: black;
     
     main{
-        margin-top: 5rem;
+      
+        z-index: 0;
+        padding-top: 10rem;
         width: 100vw;
         min-height: 100vh;
         display: flex;
         justify-content: center;
+        overflow: auto;
     }
     #menuFechado{
-        display: flex;
         z-index: 1;
+        display: flex;
         color: white;
         position: absolute;
         top: 5%;
@@ -141,7 +146,7 @@ p{
     Header{
     z-index: 1;
     transition: transform 400ms;
-    translate: -300px;
+    translate: -200px;
     align-items: center;
     position: absolute;
     width: 180px;
@@ -152,14 +157,14 @@ p{
     }
    }
     .open{
-        transform: translateX(190px);
+        transform: translateX(200px);
     }
     .carrosel{
-        margin-top: 8rem;
         width: 350px;
         max-height: 550px;
         display: flex;
         overflow: hidden;
+        
         
     }
     .galery{

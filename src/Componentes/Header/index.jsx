@@ -1,5 +1,6 @@
 import { Container } from "./style"
 import { useNavigate } from "react-router-dom"
+import { useEffect, useRef, useState } from "react"
 import github from '../../assets/github.svg'
 import linkedin from '../../assets/linkedin.svg'
 import whatsapp from '../../assets/whatsapp.svg'
@@ -8,9 +9,11 @@ import email from '../../assets/email.svg'
 export function Header(){
 
     const navigate = useNavigate();
-
+  
     const home = () => {
+       
         navigate('/');
+      
     }
     const aboutMe = () => {
         navigate('/about')
@@ -22,7 +25,7 @@ export function Header(){
     return (
         <Container id="headerPage">
             <ul>
-                <li onClick={home}>Home</li>
+                <li id="one" onClick={home}>Home</li>
                 <li onClick={ () => aboutMe() }>Sobre mim</li>
                 <li onClick={projcts}>Projetos</li>
             </ul>
