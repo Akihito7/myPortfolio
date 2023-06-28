@@ -14,6 +14,7 @@ background-color: black;
 
 
 main{
+    width: 90vw;
     padding: 2rem 8rem;
     display: flex;
     flex-direction: column;
