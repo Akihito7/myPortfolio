@@ -4,6 +4,7 @@ import { Header } from '../../Componentes/Header'
 import html from '../../assets/html.svg';
 import css from '../../assets/css.svg';
 import javaS from '../../assets/javascript.svg';
+import swipe from '../../assets/swipe.png';
 
 export function Projects() {
 
@@ -13,7 +14,7 @@ export function Projects() {
     const mainLabel = useRef('');
     const projetos = document.querySelectorAll(".galery .projetos");
     const headerComp = document.getElementById("headerPage");
-  
+
     let idx = 0;
     let startX;
     let moved = false;
@@ -71,19 +72,19 @@ export function Projects() {
 
             buttonMenu.current.addEventListener('touchstart', toggleHeader);
 
-            if(mainLabel.current.offsetWidth > 768){
-        
+            if (mainLabel.current.offsetWidth > 768) {
+
                 projetos.forEach((div, index) => {
-                 
+
                     if (index % 2 === 0) {
-                        
+
                         const imgProjeto = div.querySelector('.imgProjeto');
                         const infoProjeto = div.querySelector('.infoProjeto');
-                    
-    
+
+
                         div.removeChild(imgProjeto);
                         div.removeChild(infoProjeto);
-    
+
                         div.appendChild(infoProjeto);
                         div.appendChild(imgProjeto);
                     }
@@ -183,6 +184,16 @@ export function Projects() {
                         </div>
                     </div>
                 </div>
+
+
+
+                <span id="swipeRight" className="material-symbols-outlined">
+                swipe_right
+               </span>
+               <span id="swipeLeft" className="material-symbols-outlined">
+                swipe_left
+               </span>
+            
             </main>
 
 

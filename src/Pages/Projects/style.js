@@ -15,6 +15,12 @@ width: 100vw;
     box-sizing: border-box;
 
 }
+#swipeLeft{
+    display: none;
+}
+#swipeRight{
+    display: none;
+}
 
 #menuFechado{
     display: none;
@@ -118,7 +124,7 @@ p{
     align-items: center;
     
     main{
-      
+        
         z-index: 0;
         padding-top: 10rem;
         width: 100vw;
@@ -136,11 +142,21 @@ p{
         left: 10%;
         font-size: 30px;
     }
-    #swipe{
+    #swipeRight{
       color: white;
-      font-size: 50px;
-      position: absolute;
-      bottom: 6%;
+      font-size: 30px;
+      position: fixed;
+      top: 42%;
+      right: 2%;
+      display: flex;
+    }
+    #swipeLeft{
+    display: flex;
+      color: white;
+      font-size: 30px;
+      position: fixed;
+      top: 42%;
+      left: 2%;
     }
 
     Header{
@@ -161,7 +177,7 @@ p{
     }
     .carrosel{
         width: 350px;
-        max-height: 550px;
+        height: 70vh;
         display: flex;
         overflow: hidden;
         
@@ -177,10 +193,13 @@ p{
         padding: 0;
         gap: 0;
     }
-
+ 
+   
+ 
     .projetos{
+        
         width: 350px;
-        max-height: 550px;
+        height: 70vh;
         display: flex;
         flex-direction: column;
         justify-content: center;

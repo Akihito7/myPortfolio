@@ -75,7 +75,7 @@ p{
 }
 @media(max-width: 768px){
 
-   
+
     #menuFechado{
     display: flex;
     position: absolute;
