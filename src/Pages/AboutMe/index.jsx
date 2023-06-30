@@ -47,7 +47,7 @@ export function AboutMe(){
             </span>
                 <div className="sobremim">
                   <h1>Sobre mim</h1>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, ut quaerat? Unde eaque nihil praesentium veritatis? Neque delectus maxime et molestiae, explicabo officiis accusantium esse facere iste numquam voluptatibus iusto.</p>
+                  <p>Oi, sou Guilherme Akihito e sou completamente apaixonado pelo mundo da tecnologia e por desafios. Acho que o melhor dessa paixão é que ela sempre me impulsiona a superar obstáculos e encontrar soluções criativas. Adoro a emoção que acompanha os desafios; é uma sensação incrível quando consigo resolvê-los.</p>
 
                 </div>
                 <div className="hardSkills">
