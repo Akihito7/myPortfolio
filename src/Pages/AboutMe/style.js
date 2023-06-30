@@ -2,6 +2,13 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
 
+*{
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
 display: flex;
 width: 100vw;
 min-height: 100vh;
@@ -14,7 +21,7 @@ background-color: black;
 
 
 main{
-    width: 90vw;
+    width: 82vw;
     padding: 2rem 8rem;
     display: flex;
     flex-direction: column;

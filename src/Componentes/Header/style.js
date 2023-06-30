@@ -7,7 +7,7 @@ background-color: #0b0d11;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: space-around;
+justify-content: space-evenly;
 padding: 2rem;
 ul{
     color: white;
