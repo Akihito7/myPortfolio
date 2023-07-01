@@ -4,6 +4,7 @@ import { Header } from '../../Componentes/Header'
 import html from '../../assets/html.svg';
 import css from '../../assets/css.svg';
 import javaS from '../../assets/javascript.svg';
+import reactjs from '../../assets/react.svg'
 import swipe from '../../assets/swipe.png';
 import screenInitial from '../../assets/screenInitialCavaleiros.png';
 
@@ -128,7 +129,7 @@ export function Projects() {
                                 <div className="iconesProjeto">
                                     <img src={html} alt="icone html" />
                                     <img src={css} alt="icone css" />
-                                    <img src={javaS} alt="icone javascript" />
+                                    <img src={reactjs} alt="icone javascript" />
                                 </div>
 
                                 <div className="buttonsProjeto">
