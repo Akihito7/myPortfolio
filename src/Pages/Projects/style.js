@@ -45,8 +45,7 @@ overflow: auto;
 }
 .galery{
     width: 100%;
-    min-height: 100vh;
-
+    height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -56,11 +55,12 @@ overflow: auto;
 }
 .projetos{
     display: flex;
+    height: 50vw;
 }
 .imgProjeto{
     width: 50%;
-    height: 23rem;
-    background-color: #CE2525;
+    height: 100%;
+    background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,13 +75,14 @@ overflow: auto;
 .infoProjeto{
     color: white;
     width: 50%;
-    height: 23rem;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
     gap: 1rem;
+ 
 }
 .iconesProjeto{
     width: 70%;
@@ -114,6 +115,9 @@ button{
 button:first-child{
     background-color: #CE2525;
 }
+#btcode{
+    background-color: #740909;
+}
 button:hover{
     transform: scale(1.1);
 }
@@ -122,7 +126,9 @@ h1{
 }
 p{
     font-size: 1rem;
+    line-height: 20px;
 }
+
 
 
 

@@ -135,7 +135,7 @@ export function Projects() {
                                 <div className="buttonsProjeto">
                                     <a href="https://react-caveleiros-zodiacos-krcvrfoup-akihito7.vercel.app" target='_blank'><button>Deploy</button></a>
                                     
-                                    <a href="https://github.com/Akihito7/react_caveleiros_zodiacos" target='_blank'><button>Code</button></a>
+                                    <a href="https://github.com/Akihito7/react_caveleiros_zodiacos" target='_blank'><button id="btcode">Code</button></a>
                                 </div>
                             </div>
                         </div>
