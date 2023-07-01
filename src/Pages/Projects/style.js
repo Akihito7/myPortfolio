@@ -15,6 +15,10 @@ width: 100vw;
     box-sizing: border-box;
 
 }
+
+a{
+    text-decoration: none;
+}
 #swipeLeft{
     display: none;
 }
@@ -61,6 +65,12 @@ overflow: auto;
     align-items: center;
     justify-content: center;
     color: white;
+}
+
+.imgProjeto img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .infoProjeto{
     color: white;
@@ -176,7 +186,7 @@ p{
         transform: translateX(200px);
     }
     .carrosel{
-        width: 350px;
+        width: 95vw;
         height: 70vh;
         display: flex;
         overflow: hidden;
@@ -198,7 +208,7 @@ p{
  
     .projetos{
         
-        width: 350px;
+        width: 95vw;
         height: 70vh;
         display: flex;
         flex-direction: column;
@@ -209,11 +219,16 @@ p{
     .imgProjeto{
         width: 80%;
         height: 40%;
-        background-color: red;
+        background-color: black;
         display: flex;
         justify-content: center;
         align-items: center;
         
+    }
+    .imgProjeto img{
+        object-fit: cover;
+        width: 110%;
+        height: 90%;
     }
     .infoProjeto{
         width: 90%;

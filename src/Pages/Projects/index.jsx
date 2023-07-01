@@ -5,6 +5,7 @@ import html from '../../assets/html.svg';
 import css from '../../assets/css.svg';
 import javaS from '../../assets/javascript.svg';
 import swipe from '../../assets/swipe.png';
+import screenInitial from '../../assets/screenInitialCavaleiros.png';
 
 export function Projects() {
 
@@ -32,6 +33,8 @@ export function Projects() {
 
         }
     }
+
+
 
 
     useEffect(() => {
@@ -64,7 +67,7 @@ export function Projects() {
                         }
                         moved = true;
                     }
-                    galeryRef.current.style.transform = `translateX(${-idx * 350}px)`;
+                    galeryRef.current.style.transform = `translateX(${-idx * 95}vw)`;
                     startX = currentX;
                 }
 
@@ -114,7 +117,7 @@ export function Projects() {
                         <div className="projetos">
 
                             <div className="imgProjeto">
-                                <h1>em construção</h1>
+                                <img src={screenInitial} alt="foto da pagina inicial do meu site dos cavaleiros" />
                             </div>
 
                             <div className="infoProjeto">
@@ -129,8 +132,9 @@ export function Projects() {
                                 </div>
 
                                 <div className="buttonsProjeto">
-                                    <button>Deploy</button>
-                                    <button>Code</button>
+                                    <a href="https://react-caveleiros-zodiacos-krcvrfoup-akihito7.vercel.app" target='_blank'><button>Deploy</button></a>
+                                    
+                                    <a href="https://github.com/Akihito7/react_caveleiros_zodiacos" target='_blank'><button>Code</button></a>
                                 </div>
                             </div>
                         </div>
