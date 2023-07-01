@@ -40,6 +40,12 @@ h1{
     width: 80%;
  
 }
+.buttonsInfos{
+    width: 80%;
+    display: flex;
+    gap: 3rem;
+
+}
 button{
     font-family: 'Press Start 2P', cursive;
     border: none;
@@ -47,6 +53,11 @@ button{
     height: 4rem;
     cursor: pointer;
     transition: transform 300ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    font-size: 1rem;
 
 }
 button:hover{
@@ -96,8 +107,14 @@ main{
     font-size: .8rem;
 }
 button{
-    width: 60%;
+    font-size: 1rem;
+    width: 12rem;
     height: 4rem;
+    //flex-wrap: nowrap;
+    padding: 0 10px;
+}
+button:last-child{
+    background-color: #b4b4b4;
 }
 .open{
     transform: translateX(200px);

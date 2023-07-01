@@ -24,6 +24,9 @@ export function Initial() {
     const aboutMe = () => {
         navigate('/about');
     }
+    const projetos = () => {
+        navigate("/projects");
+    }
   
     function menuToggle(){
 
@@ -83,7 +86,11 @@ export function Initial() {
 
                 <div className="infos">
 
-                   <button onClick={aboutMe} id="buttonMain">Ver mais</button>
+                    <div className="buttonsInfos">
+
+                   <button onClick={aboutMe} id="buttonMain">Sobre mim</button>
+                   <button onClick={projetos} id="buttonMain">Projetos</button>
+                    </div>
                    <div className="icons">
                    <img src={html} alt="icone html" />
                    <img src={css} alt="icone css" />
