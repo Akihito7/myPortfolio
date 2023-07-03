@@ -2,13 +2,6 @@ import styled from "@emotion/styled";
 
 export const Container = styled.div`
 
-*{
-    padding: 0;
-    margin: 0;
-
-    box-sizing: border-box;
-}
-
 display: flex;
 width: 100vw;
 min-height: 100vh;

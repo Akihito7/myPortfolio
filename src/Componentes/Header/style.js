@@ -9,6 +9,14 @@ flex-direction: column;
 align-items: center;
 justify-content: space-evenly;
 padding: 2rem;
+
+*{
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
 ul{
     color: white;
     list-style: none;

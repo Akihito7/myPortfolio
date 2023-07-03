@@ -8,13 +8,6 @@ background-color: black;
 min-height: 100vh;
 width: 100vw;
 
-*{
-    margin: 0;
-    padding: 0;
-
-    box-sizing: border-box;
-
-}
 
 a{
     text-decoration: none;
@@ -66,6 +59,7 @@ overflow: auto;
     justify-content: center;
     color: white;
 }
+
 
 .imgProjeto img{
   width: 100%;
