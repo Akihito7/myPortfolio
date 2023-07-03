@@ -1,33 +1,34 @@
 import { Container } from "./style"
 import { useNavigate } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
+import { useLocation } from "react-router-dom"
 import github from '../../assets/github.svg'
 import linkedin from '../../assets/linkedin.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import email from '../../assets/email.svg'
 
 export function Header(){
+    
+    const navigateTo = useNavigate();
+    const location = useLocation();
 
-    const navigate = useNavigate();
-  
-    const home = () => {
-       
-        navigate('/');
-      
-    }
-    const aboutMe = () => {
-        navigate('/about')
-    }
-    const projcts = () => {
-        navigate("/projects")
-    }
+    const [currentPage, setCurrentPage] = useState('/');
+
+    useEffect(() => {
+       setCurrentPage(location.pathname);
+    })
  
     return (
         <Container id="headerPage">
             <ul>
-                <li id="one" onClick={home}>Home</li>
-                <li onClick={ () => aboutMe() }>Sobre mim</li>
-                <li onClick={projcts}>Projetos</li>
+                <li className={currentPage === "/" ? "paginaAtual" : ""} 
+                onClick={() => navigateTo("/")}>Home</li>
+                
+                <li className={currentPage === "/about" ? "paginaAtual" : ""}
+                onClick={() => navigateTo('/about')}>Sobre mim</li>
+
+                <li className={currentPage === "/projects" ? "paginaAtual" : ""}
+                onClick={() => navigateTo("/projects")}>Projetos</li>
             </ul>
 
             <div className="iconesContatos">

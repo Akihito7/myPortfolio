@@ -44,5 +44,8 @@ img:hover{
 .isActive{
     display: none;
 }
+.paginaAtual{
+    color: #CE2525;
+}
 
 `

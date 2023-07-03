@@ -45,6 +45,10 @@ p{
     font-size: 1.2rem;
     line-height: 2rem;
 }
+#verProjetos{
+   cursor: pointer;
+   color: #CE2525;
+}
 
 .hardSkills{
     display: flex;
