@@ -134,71 +134,49 @@ export function Projects() {
 
                                 <div className="buttonsProjeto">
                                     <a href="https://react-caveleiros-zodiacos-krcvrfoup-akihito7.vercel.app" target='_blank'><button>Deploy</button></a>
-                                    
+
+                                    <a href="https://github.com/Akihito7/react_caveleiros_zodiacos" target='_blank'><button id="btcode">Code</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="projetos">
+
+                            <div className="imgProjeto">
+                                <h1>em andamento</h1>
+                            </div>
+
+                            <div className="infoProjeto">
+                                <h1>em andamento</h1>
+
+                                <p>em andamento</p>
+
+                                <div className="iconesProjeto">
+                                    <img src={html} alt="icone html" />
+                                    <img src={css} alt="icone css" />
+                                    <img src={reactjs} alt="icone javascript" />
+                                </div>
+
+                                <div className="buttonsProjeto">
+                                    <a href="https://react-caveleiros-zodiacos-krcvrfoup-akihito7.vercel.app" target='_blank'><button>Deploy</button></a>
+
                                     <a href="https://github.com/Akihito7/react_caveleiros_zodiacos" target='_blank'><button id="btcode">Code</button></a>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="projetos">
 
-                            <div className="imgProjeto">
-                                <h1>em construção2</h1>
-                            </div>
-
-                            <div className="infoProjeto">
-                                <h1>Os cavaleiros de ouro</h1>
-
-                                <p>É um site feito para os fãs de Os cavaleiros dos zodíacos,que desejam conhecer um pouquinho melhor os 12 cavaleiros de ouro, esse site consome uma api feita em node por mim.</p>
-
-                                <div className="iconesProjeto">
-                                    <img src={html} alt="icone html" />
-                                    <img src={css} alt="icone css" />
-                                    <img src={javaS} alt="icone javascript" />
-                                </div>
-
-                                <div className="buttonsProjeto">
-                                    <button>Deploy</button>
-                                    <button>Code</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="projetos">
-
-                            <div className="imgProjeto">
-                                <h1>em construção3</h1>
-                            </div>
-
-                            <div className="infoProjeto">
-                                <h1>Os cavaleiros de ouro</h1>
-
-                                <p>É um site feito para os fãs de Os cavaleiros dos zodíacos,que desejam conhecer um pouquinho melhor os 12 cavaleiros de ouro, esse site consome uma api feita em node por mim.</p>
-
-                                <div className="iconesProjeto">
-                                    <img src={html} alt="icone html" />
-                                    <img src={css} alt="icone css" />
-                                    <img src={javaS} alt="icone javascript" />
-                                </div>
-
-                                <div className="buttonsProjeto">
-                                    <button>Deploy</button>
-                                    <button>Code</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
 
 
                 <span id="swipeRight" className="material-symbols-outlined">
-                swipe_right
-               </span>
-               <span id="swipeLeft" className="material-symbols-outlined">
-                swipe_left
-               </span>
-            
+                    swipe_right
+                </span>
+                <span id="swipeLeft" className="material-symbols-outlined">
+                    swipe_left
+                </span>
+
             </main>
 
 

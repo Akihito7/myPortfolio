@@ -38,22 +38,30 @@ overflow: auto;
 }
 .galery{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 5rem;
     padding: 2rem;
+    align-items: center;
 
-  
 }
 .projetos{
+    width: 45vw;
+    height: 90vh;
+    padding: 2rem;
     display: flex;
-    height: 50vw;
+    flex-direction: column;
+    background-color: #0B0D11;
+    align-items: center;
+    gap: 2rem;
+
+    margin-bottom: 2rem;
 }
 .imgProjeto{
-    width: 50%;
-    height: 100%;
-    background-color: red;
+    width: 100%;
+    height: 40%;
+    //background-color: red;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,14 +76,15 @@ overflow: auto;
 }
 .infoProjeto{
     color: white;
-    width: 50%;
-    height: 100%;
+    width: 90%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
     gap: 1rem;
+    text-align: justify;
  
 }
 .iconesProjeto{
@@ -202,6 +211,7 @@ p{
         transform: translateX(0);
         padding: 0;
         gap: 0;
+        align-items: start;
     }
  
    
@@ -219,7 +229,7 @@ p{
     .imgProjeto{
         width: 80%;
         height: 40%;
-        background-color: black;
+        //background-color: black;
         display: flex;
         justify-content: center;
         align-items: center;
