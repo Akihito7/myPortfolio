@@ -48,7 +48,7 @@ overflow: auto;
 }
 .projetos{
     width: 45vw;
-    height: 90vh;
+    //height: 90vh;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -219,7 +219,7 @@ p{
     .projetos{
         
         width: 95vw;
-        height: 70vh;
+        //height: 70vh;
         display: flex;
         flex-direction: column;
         justify-content: center;

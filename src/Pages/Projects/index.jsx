@@ -76,27 +76,6 @@ export function Projects() {
 
             buttonMenu.current.addEventListener('touchstart', toggleHeader);
 
-            if (mainLabel.current.offsetWidth > 768) {
-
-                projetos.forEach((div, index) => {
-
-                    if (index % 2 === 0) {
-
-                        const imgProjeto = div.querySelector('.imgProjeto');
-                        const infoProjeto = div.querySelector('.infoProjeto');
-
-
-                        div.removeChild(imgProjeto);
-                        div.removeChild(infoProjeto);
-
-                        div.appendChild(infoProjeto);
-                        div.appendChild(imgProjeto);
-                    }
-                });
-            }
-
-
-
         }
         else {
             setMounted(true);
