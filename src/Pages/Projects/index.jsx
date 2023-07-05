@@ -7,6 +7,7 @@ import javaS from '../../assets/javascript.svg';
 import reactjs from '../../assets/react.svg'
 import swipe from '../../assets/swipe.png';
 import screenInitial from '../../assets/screenInitialCavaleiros.png';
+import screenInitialGym from '../../assets/screenInitialGymProject.png';
 
 export function Projects() {
 
@@ -124,13 +125,13 @@ export function Projects() {
                         <div className="projetos">
 
                             <div className="imgProjeto">
-                                <h1>em andamento</h1>
+                                <img src={screenInitialGym} alt="imagem da pagina inicial do meu site gym" />
                             </div>
 
                             <div className="infoProjeto">
-                                <h1>em andamento</h1>
+                                <h1>Gym page</h1>
 
-                                <p>em andamento</p>
+                                <p>Domine a era da tecnologia e impulsione sua academia para o sucesso com um site de tirar o fôlego! Descubra por que é absolutamente vital que sua academia esteja online para atrair uma enxurrada de novos clientes. Além disso, aproveite a praticidade incomparável de matrículas simples e rápidas, tudo ao alcance de um clique</p>
 
                                 <div className="iconesProjeto">
                                     <img src={html} alt="icone html" />
@@ -139,9 +140,9 @@ export function Projects() {
                                 </div>
 
                                 <div className="buttonsProjeto">
-                                    <a href="https://react-caveleiros-zodiacos-krcvrfoup-akihito7.vercel.app" target='_blank'><button>Deploy</button></a>
+                                    <a href="https://gym-project-ntkvehfpn-akihito7.vercel.app" target='_blank'><button>Deploy</button></a>
 
-                                    <a href="https://github.com/Akihito7/react_caveleiros_zodiacos" target='_blank'><button id="btcode">Code</button></a>
+                                    <a href="https://github.com/Akihito7/gymProject" target='_blank'><button id="btcode">Code</button></a>
                                 </div>
                             </div>
                         </div>

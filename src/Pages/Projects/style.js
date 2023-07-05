@@ -129,7 +129,7 @@ h1{
 }
 p{
     font-size: 1rem;
-    line-height: 20px;
+    line-height: 30px;
 }
 
 
