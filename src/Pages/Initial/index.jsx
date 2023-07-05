@@ -27,7 +27,14 @@ export function Initial() {
     const projetos = () => {
         navigate("/projects");
     }
-  
+    
+    const fecharMenu = () => {
+        if(headerPagex.classList.contains("open")){
+            headerPagex.classList.remove("open");
+            menuRef.current.innerHTML = "menu"
+
+        }
+    }
     function menuToggle(){
 
         
@@ -79,7 +86,7 @@ export function Initial() {
             <span ref={menuRef} id="menuFechado" className="material-symbols-outlined">
               menu
             </span>
-            <main>
+            <main onClick={fecharMenu}>
                 <div className="textoAutomatico">
                 <h1 ref={h1Ref}></h1>
                 </div>

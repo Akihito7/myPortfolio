@@ -21,10 +21,13 @@ export function Projects() {
     let startX;
     let moved = false;
     let i;
-
+    
+   const fecharMenu = () => {
+    headerComp.classList.remove("open")
+    buttonMenu.current.innerHTML = "menu"
+   }
     const toggleHeader = () => {
         if (headerComp.classList.contains("open")) {
-            buttonMenu.current.innerHTML = "close";
             headerComp.classList.remove("open")
             buttonMenu.current.innerHTML = "menu"
         }
@@ -91,7 +94,7 @@ export function Projects() {
             <span ref={buttonMenu} id="menuFechado" className="material-symbols-outlined">
                 menu
             </span>
-            <main>
+            <main onClick={fecharMenu}>
                 <div className="carrosel">
                     <div ref={galeryRef} className="galery">
                         <div className="projetos">

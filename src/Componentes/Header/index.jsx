@@ -9,6 +9,7 @@ import email from '../../assets/email.svg'
 
 export function Header(){
     
+    const labelHeader = useRef();
     const navigateTo = useNavigate();
     const location = useLocation();
 
@@ -19,7 +20,7 @@ export function Header(){
     })
  
     return (
-        <Container id="headerPage">
+        <Container ref={labelHeader} id="headerPage">
             <ul>
                 <li className={currentPage === "/" ? "paginaAtual" : ""} 
                 onClick={() => navigateTo("/")}>Home</li>
