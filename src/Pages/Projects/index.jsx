@@ -140,7 +140,7 @@ export function Projects() {
                                 </div>
 
                                 <div className="buttonsProjeto">
-                                    <a href="https://gym-project-ntkvehfpn-akihito7.vercel.app" target='_blank'><button>Deploy</button></a>
+                                    <a href="https://gym-project-beta.vercel.app" target='_blank'><button>Deploy</button></a>
 
                                     <a href="https://github.com/Akihito7/gymProject" target='_blank'><button id="btcode">Code</button></a>
                                 </div>
