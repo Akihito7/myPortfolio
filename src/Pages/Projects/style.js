@@ -219,7 +219,7 @@ p{
     .projetos{
         
         width: 95vw;
-        height: 85vh;
+        min-height: 85vh;
       
         display: flex;
         flex-direction: column;
@@ -254,11 +254,11 @@ p{
         color: white;
     }
     h1{
-        font-size: 1.6rem;
+        font-size: 2em;
     }
     p{
-        font-size: 1rem;
-        line-height: 1.5rem;
+        font-size: 1.2em;
+        line-height: 2em;
     }
     .iconesProjeto{
         width: 50%;
