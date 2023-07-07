@@ -145,7 +145,7 @@ p{
     main{
         
         z-index: 0;
-        padding-top: 10rem;
+        padding-top: 7rem;
         width: 100vw;
         min-height: 100vh;
         display: flex;
@@ -220,10 +220,10 @@ p{
     .projetos{
        
         width: 95vw;
-        
+        height: 80vh;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         gap: 3rem;
         background-color: black;
