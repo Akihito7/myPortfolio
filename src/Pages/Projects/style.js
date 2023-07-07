@@ -219,8 +219,7 @@ p{
     .projetos{
         
         width: 95vw;
-        min-height: 85vh;
-      
+        height: 85vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
