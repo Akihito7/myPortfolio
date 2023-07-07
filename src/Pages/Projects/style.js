@@ -196,7 +196,7 @@ p{
     }
     .carrosel{
         width: 95vw;
-        height: 70vh;
+        height: 85vh;
         display: flex;
         overflow: hidden;
         
@@ -219,15 +219,17 @@ p{
     .projetos{
         
         width: 95vw;
-        //height: 70vh;
+        height: 85vh;
+      
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 3rem;
+    
     }
     .imgProjeto{
-        width: 80%;
+        width: 100%;
         height: 40%;
         //background-color: black;
         display: flex;
