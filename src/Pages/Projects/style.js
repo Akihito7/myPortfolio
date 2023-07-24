@@ -85,8 +85,14 @@ overflow: auto;
     padding: 2rem;
     gap: 1rem;
     text-align: justify;
+
+    p{
+        text-align: start;
+    }
  
 }
+
+
 .iconesProjeto{
     width: 70%;
     display: flex;
@@ -252,6 +258,11 @@ p{
         align-items: center;
         justify-content: space-between;
         color: white;
+
+        p{
+            text-align: start;
+        }
+        
     }
     h1{
         font-size: 2em;
