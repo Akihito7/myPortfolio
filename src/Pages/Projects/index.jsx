@@ -131,7 +131,7 @@ export function Projects() {
                             <div className="infoProjeto">
                                 <h1>Gym page</h1>
 
-                                <p>Domine a era da tecnologia e impulsione sua academia para o sucesso com um site de tirar o fôlego! atraia muitos clientes. Além disso, aproveite a praticidade incomparável de matrículas simples e rápidas.</p>
+                                <p>Domine a era da tecnologia! Impulsione sua academia para o sucesso com um site incrível de tirar o fôlego! atraia muitos clientes com matrículas práticas e rápidas.</p>
 
                                 <div className="iconesProjeto">
                                     <img src={html} alt="icone html" />
