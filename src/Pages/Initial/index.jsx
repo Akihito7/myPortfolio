@@ -9,6 +9,7 @@ import react from '../../assets/react.svg';
 import node from '../../assets/node.svg';
 import java from '../../assets/java.svg';
 import spring from '../../assets/springBoot.svg';
+import typescript from '../../assets/typescript.svg'
 
 
 
@@ -106,6 +107,8 @@ export function Initial() {
                    <img src={node} alt="icone node" />
                    <img src={java} alt="icone java" />
                    <img src={spring} alt="icone spring boot" />
+                   <img src={typescript} alt="icone typescript" />
+                   
                     </div>
                 </div>
             </main>

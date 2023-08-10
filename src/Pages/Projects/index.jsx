@@ -1,6 +1,12 @@
 import { Container } from './style';
 import { useRef, useEffect, useState } from 'react';
+import { isMobile, isTablet } from 'react-device-detect';
+
 import { Header } from '../../Componentes/Header'
+import { SwipeScreenWarning } from '../../Componentes/SwipeScreenWarning';
+
+
+
 import html from '../../assets/html.svg';
 import css from '../../assets/css.svg';
 import javaS from '../../assets/javascript.svg';
@@ -10,6 +16,7 @@ import screenInitial from '../../assets/screenInitialCavaleiros.png';
 import screenInitialGym from '../../assets/screenInitialGymProject.png';
 
 export function Projects() {
+    const [swipeScreenWarning, setSwipeScreenWarning] = useState(false);
 
     const [mounted, setMounted] = useState(false);
     const buttonMenu = useRef('');
@@ -39,12 +46,23 @@ export function Projects() {
         }
     }
 
+    
+    const closeSwipeWarning = () => {
+        setSwipeScreenWarning(false)
+    }
+
 
 
 
     useEffect(() => {
 
         if (mounted) {
+              
+            if(isMobile | isTablet) {
+               setSwipeScreenWarning(true);
+            }
+            
+
             galeryRef.current.addEventListener("touchstart", (event) => {
                 startX = event.touches[0].clientX;
                 moved = false;
@@ -150,16 +168,12 @@ export function Projects() {
                     </div>
                 </div>
 
-
-
-                <span id="swipeRight" className="material-symbols-outlined">
-                    swipe_right
-                </span>
-                <span id="swipeLeft" className="material-symbols-outlined">
-                    swipe_left
-                </span>
-
+            <SwipeScreenWarning
+             isVisible={swipeScreenWarning}
+             onPress={closeSwipeWarning}
+             />
             </main>
+
 
 
 

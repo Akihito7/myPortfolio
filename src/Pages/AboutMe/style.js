@@ -53,9 +53,21 @@ p{
 }
 .iconsDiv{
     width: 100px;
+
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+
+.iconsHardSkills{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     
@@ -76,6 +88,10 @@ p{
 }
 .icons img:hover{
     transform: scale(1.1);
+}
+
+.divImagemIcone{
+    height: 50px;
 }
 @media(max-width: 768px){
 

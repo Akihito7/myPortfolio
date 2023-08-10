@@ -9,6 +9,7 @@ min-height: 100vh;
 width: 100vw;
 
 
+
 a{
     text-decoration: none;
 }
@@ -205,9 +206,6 @@ p{
         min-height: 80vh;
         display: flex;
         overflow: hidden;
-        overflow-y: auto;
-        
-        
     }
     .galery{
         width: auto;
@@ -219,6 +217,7 @@ p{
         padding: 0;
         gap: 0;
         align-items: start;
+        
     }
  
    
@@ -226,13 +225,14 @@ p{
     .projetos{
        
         width: 95vw;
-        height: 80vh;
+        height: 70vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
         gap: 3rem;
         background-color: black;
+        
     }
     .imgProjeto{
         width: 100%;
