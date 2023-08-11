@@ -233,6 +233,7 @@ p{
         gap: 3rem;
         background-color: black;
         overflow-y: auto;
+        overflow-x: hidden;
         
     }
     .imgProjeto{

@@ -78,6 +78,7 @@ p{
 .icons{
     display: flex;
     justify-content: space-between;
+
     flex-wrap: wrap;
     width: 100%;
 }
@@ -138,15 +139,19 @@ main{
 .open{
     transform: translateX(100%);
 }
+.icons{
+            justify-content: center;
+        }
 
 }
 
-.icons img{
-    width: 40px;
-}
-.iconsDiv{
-    width: 80px;
-}
-
+        .icons img{
+            width: 40px;
+        }
+        .iconsDiv{
+            width: 80px;
+        }
+      
+        
 
 `
