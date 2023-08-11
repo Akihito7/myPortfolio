@@ -73,7 +73,7 @@ export function Projects() {
                     const currentX = event.touches[0].clientX;
                     const diffX = startX - currentX;
 
-                    if (diffX > 10) {
+                    if (diffX > 20) {
                         idx++;
                         if (idx > projetos.length - 1) {
                             for (i = 0; i < projetos.length; i++) {
@@ -83,7 +83,7 @@ export function Projects() {
                         moved = true;
                     }
 
-                    else if (diffX < -10) {
+                    else if (diffX < -20) {
                         idx--;
                         if (idx < 0) {
                             idx = projetos.length - 1;
