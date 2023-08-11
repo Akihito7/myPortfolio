@@ -232,6 +232,7 @@ p{
         align-items: center;
         gap: 3rem;
         background-color: black;
+        overflow-y: auto;
         
     }
     .imgProjeto{
