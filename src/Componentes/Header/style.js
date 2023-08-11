@@ -56,4 +56,17 @@ img:hover{
     color: #CE2525;
 }
 
+@media(max-width: 768px){
+    transition: transform 400ms;
+    translate: -200px;
+    align-items: center;
+    position: absolute;
+    width: 180px;
+    align-items: center;
+    padding-right: 1.4rem;
+
+li{
+    font-size: 1.4rem;
+}
+}
 `

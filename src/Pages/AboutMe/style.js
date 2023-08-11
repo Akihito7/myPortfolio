@@ -101,6 +101,7 @@ p{
     display: flex;
     position: absolute;
     color: white;
+    font-size: 30px;
     top: 5%;
     left: 10%;
     cursor: pointer;
@@ -113,9 +114,7 @@ Header{
     width: 180px;
     align-items: center;
     padding-right: 1.4rem;
-    li{
-    font-size: 1rem;
-}
+
 }
 
 main{

@@ -194,9 +194,6 @@ p{
     width: 180px;
     align-items: center;
     padding-right: 1.4rem;
-    li{
-        font-size: 1rem;
-    }
    }
     .open{
         transform: translateX(200px);
@@ -233,7 +230,7 @@ p{
         gap: 3rem;
         background-color: black;
         overflow-y: auto;
-        overflow-x: hidden;
+        overflow-x: h;
         
     }
     .imgProjeto{

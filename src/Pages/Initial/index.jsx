@@ -1,82 +1,97 @@
-import { Container } from "./style";
+import {
+    Container,
+    ContentMain,
+    AutoTextContent,
+    AutoText,
+    InformationContent,
+    ButtonInformationsContent,
+    ButtonInformation,
+    IconsContent,
+    ImageIcon,
+    MenuCloseContent,
+
+
+} from "./style";
+
 import { Header } from "../../Componentes/Header";
-import { useEffect,useRef,useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import html from '../../assets/html.svg';
-import css from '../../assets/css.svg';
-import javaS from '../../assets/javascript.svg';
-import react from '../../assets/react.svg';
-import node from '../../assets/node.svg';
-import java from '../../assets/java.svg';
-import spring from '../../assets/springBoot.svg';
-import typescript from '../../assets/typescript.svg'
+
+
+import HtmlSvg from '../../assets/html.svg';
+import CssSvg from '../../assets/css.svg';
+import JavasSvg from '../../assets/javascript.svg';
+import ReactSvg from '../../assets/react.svg';
+import NodeSvg from '../../assets/node.svg';
+import JavaSvg from '../../assets/java.svg';
+import SpringSvg from '../../assets/springBoot.svg';
+import TypescriptSvg from '../../assets/typescript.svg'
 
 
 
 export function Initial() {
-    
+
+    const headerPageComponent = document.getElementById("headerPage");
+    const [mounted, setMounted] = useState(false);
+
     const h1Ref = useRef('');
     const menuRef = useRef('')
-    const [mounted, setMounted] = useState(false);
-    const headerPagex = document.getElementById("headerPage");
-    const menuFechado = document.getElementById("menuFechado");
+
     const navigate = useNavigate();
 
-    const aboutMe = () => {
+    const goAboutMe = () => {
         navigate('/about');
     }
-    const projetos = () => {
+    const goProjetos = () => {
         navigate("/projects");
     }
-    
-    const fecharMenu = () => {
-        if(headerPagex.classList.contains("open")){
-            headerPagex.classList.remove("open");
+
+    const handleCloseMenu = () => {
+        if (headerPageComponent.classList.contains("open")) {
+            headerPageComponent.classList.remove("open");
             menuRef.current.innerHTML = "menu"
 
         }
     }
-    function menuToggle(){
+    function handleMenuToggle() {
 
-        
-        if(headerPagex.classList.contains("open")){
-            headerPagex.classList.remove("open");
+
+        if (headerPageComponent.classList.contains("open")) {
+            headerPageComponent.classList.remove("open");
             menuRef.current.innerHTML = "menu"
         }
-        else{
+        else {
             menuRef.current.innerHTML = "close"
-            headerPagex.classList.add("open");
+            headerPageComponent.classList.add("open");
         }
     }
-    
-    
+
+
     useEffect(() => {
 
-        
-        
+
+
         if (mounted) {
-         
-            
-            const texto = "Olá, eu sou Guilherme Akihito desenvolvedor de softwares"
+
+
+            const text = "Olá, eu sou Guilherme Akihito desenvolvedor de softwares"
             let idx = 0;
-            
-            menuRef.current.addEventListener("click" , menuToggle)
-            
-            const escreverTexto = () => {
 
-            if(idx < texto.length){
-                h1Ref.current.innerHTML += texto.charAt(idx);
-                idx++
-                setTimeout(escreverTexto, 100);
-            }
-            else{
-                return null;
-            }
+            const writeTextAutomatically = () => {
+
+                if (idx < text.length) {
+                    h1Ref.current.innerHTML += text.charAt(idx);
+                    idx++
+                    setTimeout(writeTextAutomatically, 100);
+                }
+                else {
+                    return null;
+                }
             }
 
-            escreverTexto();
+            writeTextAutomatically();
         }
-         else {
+        else {
             setMounted(true);
         }
     }, [mounted]);
@@ -84,34 +99,61 @@ export function Initial() {
     return (
         <Container>
             <Header></Header>
-            <span ref={menuRef} id="menuFechado" className="material-symbols-outlined">
-              menu
-            </span>
-            <main onClick={fecharMenu}>
-                <div className="textoAutomatico">
-                <h1 ref={h1Ref}></h1>
-                </div>
 
-                <div className="infos">
+            <MenuCloseContent
+                ref={menuRef}
+                className="material-symbols-outlined"
+                onClick={handleMenuToggle}
+            >
+                menu
+            </MenuCloseContent>
 
-                    <div className="buttonsInfos">
 
-                   <button onClick={aboutMe} id="buttonMain">Sobre mim</button>
-                   <button onClick={projetos} id="buttonMain">Projetos</button>
-                    </div>
-                   <div className="icons">
-                   <img src={html} alt="icone html" />
-                   <img src={css} alt="icone css" />
-                   <img src={javaS} alt="icone javaScript" />
-                   <img src={react} alt="icone react" />
-                   <img src={node} alt="icone node" />
-                   <img src={java} alt="icone java" />
-                   <img src={spring} alt="icone spring boot" />
-                   <img src={typescript} alt="icone typescript" />
-                   
-                    </div>
-                </div>
-            </main>
+            <ContentMain
+                onClick={handleCloseMenu}
+            >
+                <AutoTextContent>
+                    <AutoText
+                        ref={h1Ref}
+                    >
+
+                    </AutoText>
+                </AutoTextContent>
+
+                <InformationContent>
+
+                    <ButtonInformationsContent>
+
+                        <ButtonInformation
+                            id="buttonMain"
+                            onClick={goAboutMe}
+
+                        >
+                            Sobre mim
+                        </ButtonInformation>
+
+                        <ButtonInformation
+                            id="buttonMain"
+                            onClick={goProjetos}
+                            secondary
+                        >
+                            Projetos
+                        </ButtonInformation>
+
+                    </ButtonInformationsContent>
+
+                    <IconsContent>
+                        <ImageIcon src={HtmlSvg} alt="icone html" />
+                        <ImageIcon src={CssSvg} alt="icone css" />
+                        <ImageIcon src={JavasSvg} alt="icone javaScript" />
+                        <ImageIcon src={ReactSvg} alt="icone react" />
+                        <ImageIcon src={NodeSvg} alt="icone node" />
+                        <ImageIcon src={JavaSvg} alt="icone java" />
+                        <ImageIcon src={SpringSvg} alt="icone spring boot" />
+                        <ImageIcon src={TypescriptSvg} alt="icone typescript" />
+                    </IconsContent>
+                </InformationContent>
+            </ContentMain>
         </Container>
     );
 }
