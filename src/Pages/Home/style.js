@@ -9,28 +9,9 @@ height: 100vh;
 background-color: red;
 position: relative;
 
-
-button:hover{
-    transform: scale(1.1);
-}
-
-
-img:hover{
-transform: scale(1.1);
-
-}
-
 //Version to mobile
+
 @media(max-width: 768px){
-#menuFechado{
-    font-size: 30px;
-    display: flex;
-    position: absolute;
-    color: white;
-    top: 5%;
-    left: 10%;
-    cursor: pointer;
-}
 
 .open{
     transform: translateX(200px);
@@ -52,7 +33,7 @@ padding: 5rem 5rem;
 gap: 2rem;
 
 
-//Version to mobile
+//Version mobile
 @media(max-width: 768px){
 padding: 0;
 width: 100%;
@@ -76,7 +57,7 @@ color: white;
 font-size: 2rem;
 line-height: 3rem;
 
-//Version to mobile
+//Version mobile
 @media(max-width: 768px){
 font-size: 1.6rem;
 }
@@ -121,6 +102,12 @@ border: none;
 cursor: pointer;
 transition: transform 300ms;
 
+//hover
+
+:hover{
+    transform: scale(1.1);
+}
+
 //Version to mobile
 @media(max-width: 768px){
 width: 12rem;
@@ -146,6 +133,12 @@ export const ImageIcon = styled.img`
 width: 50px;
 cursor: pointer;
 transition: transform 300ms;
+
+//hover
+
+:hover{
+    transform: scale(1.1);
+}
 
 `
 

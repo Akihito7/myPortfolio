@@ -24,7 +24,7 @@ gap: 2rem;
 export const TextSwipeScreen = styled.h1`
 
 color: white;
-font-size: .8rem;
+font-size: 1rem;
 line-height: 2rem;
 text-align: center;
 
@@ -32,9 +32,15 @@ text-align: center;
 
 export const ButtonSwipe = styled.button`
 
-border-radius: 4px;
 padding: 15px;
 width: 80%;
+
+font-family: 'Press Start 2P', cursive;
+font-size: 1rem;
+background-color: #740909;
+color: white;
+border: none;
+border-radius: 4px;
 
 `
 

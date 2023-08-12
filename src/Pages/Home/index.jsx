@@ -29,7 +29,7 @@ import TypescriptSvg from '../../assets/typescript.svg'
 
 
 
-export function Initial() {
+export function Home() {
 
     const headerPageComponent = document.getElementById("headerPage");
     const [mounted, setMounted] = useState(false);
@@ -41,10 +41,11 @@ export function Initial() {
 
     const goAboutMe = () => {
         navigate('/about');
-    }
+    };
+    
     const goProjetos = () => {
         navigate("/projects");
-    }
+    };
 
     const handleCloseMenu = () => {
         if (headerPageComponent.classList.contains("open")) {
@@ -52,7 +53,8 @@ export function Initial() {
             menuRef.current.innerHTML = "menu"
 
         }
-    }
+    };
+
     function handleMenuToggle() {
 
 
@@ -64,7 +66,7 @@ export function Initial() {
             menuRef.current.innerHTML = "close"
             headerPageComponent.classList.add("open");
         }
-    }
+    };
 
 
     useEffect(() => {
@@ -98,7 +100,7 @@ export function Initial() {
 
     return (
         <Container>
-            <Header></Header>
+            <Header />
 
             <MenuCloseContent
                 ref={menuRef}

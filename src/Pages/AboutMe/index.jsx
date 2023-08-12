@@ -1,40 +1,62 @@
-import { Container } from './style';
+import {
+  Container,
+  ContentMain,
+  IconMenuClose,
+  ContentAboutMe,
+  TitleAboutMe,
+  TextAboutMe,
+  SeeMoreProjects,
+  ContentHardSkills,
+  TitleHardSkills,
+  ContentIconsHardSkills,
+  AllIconsTogether,
+
+} from './style';
+
+
 import { Header } from '../../Componentes/Header';
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import html from '../../assets/html.svg';
-import css from '../../assets/css.svg';
-import javaS from '../../assets/javascript.svg';
-import react from '../../assets/react.svg';
-import node from '../../assets/node.svg';
-import java from '../../assets/java.svg';
-import spring from '../../assets/springBoot.svg';
-import typescript from '../../assets/typescript.svg'
+
+
+import { IconsAboutMe } from '../../Componentes/IconsAboutMe';
+
+import HtmlSvg from '../../assets/html.svg';
+import CssSvg from '../../assets/css.svg';
+import JavasSvg from '../../assets/javascript.svg';
+import ReactSvg from '../../assets/react.svg';
+import NodeSvg from '../../assets/node.svg';
+import JavaSvg from '../../assets/java.svg';
+import SpringSvg from '../../assets/springBoot.svg';
+import TypescriptSvg from '../../assets/typescript.svg'
 
 export function AboutMe() {
 
-  const labelMain = useRef()
-  const headerPage = document.getElementById('headerPage');
-  const labelMenu = useRef();
-  const navigate = useNavigate();
-
   const [mounted, setMouted] = useState();
 
+  const headerPage = document.getElementById('headerPage');
+  const labelMenu = useRef();
+
+  const navigate = useNavigate();
 
 
-  const navProjects = () => {
-    navigate('/projects');
+
+  function goProjects() {
+    navigate('/projects')
   };
-  const closeMenu = () => {
+
+  function handleCloseMenu() {
     if (headerPage.classList.contains('open')) {
       menuToggle();
     }
   };
 
-  function menuToggle() {
+  function handleMenuToggle() {
+
     if (headerPage.classList.contains('open')) {
       labelMenu.current.innerHTML = 'menu';
-    } else {
+    }
+    else {
       labelMenu.current.innerHTML = 'close';
     }
 
@@ -45,7 +67,7 @@ export function AboutMe() {
   useEffect(() => {
 
     if (mounted) {
-      labelMenu.current.addEventListener("click", menuToggle);
+      //labelMenu.current.addEventListener("click", handleMenuToggle);
     }
     else {
       setMouted(true)
@@ -55,84 +77,104 @@ export function AboutMe() {
   return (
     <Container >
       <Header />
-      <main>
-        <span ref={labelMenu} id="menuFechado" className="material-symbols-outlined">
+
+      <ContentMain>
+
+        <IconMenuClose
+          id="menuFechado"
+          ref={labelMenu}
+          className="material-symbols-outlined"
+          onClick={handleMenuToggle}
+          
+        >
           menu
-        </span>
-        <div onClick={closeMenu} className="sobremim">
-          <h1>Sobre mim</h1>
-          <p>
+        </IconMenuClose>
+
+
+        <ContentAboutMe
+          onClick={handleCloseMenu}
+        >
+          <TitleAboutMe>Sobre mim</TitleAboutMe>
+
+          <TextAboutMe>
             Oi, sou Guilherme Akihito e sou completamente apaixonado pelo mundo da tecnologia e por desafios. Acho que o
             melhor dessa paixão é que ela sempre me impulsiona a superar obstáculos e encontrar soluções criativas. Adoro
             a emoção que acompanha os desafios; é uma sensação incrível quando consigo resolvê-los. <br /> <br />{' '}
-            <span id="verProjetos" onClick={navProjects}>
+
+            <SeeMoreProjects
+              id="verProjetos"
+              onClick={goProjects}>
               ver projetos
-            </span>
-          </p>
-        </div>
-        <div onClick={closeMenu} className="hardSkills">
-          <h1>Hard Skills</h1>
+            </SeeMoreProjects>
 
-          <div className="iconsHardSkills">
+          </TextAboutMe>
+        </ContentAboutMe>
 
+        <ContentHardSkills
+          onClick={handleCloseMenu}
+        >
+          <TitleHardSkills>Hard Skills</TitleHardSkills>
 
-            <div className="icons">
-              <div className="iconsDiv">
-              <div className="divImagemIcone">
-                <img src={html} alt="" />
-                </div>
-                <p>Html</p>
-              </div>
-              <div className="iconsDiv">
-              <div className="divImagemIcone">
-                <img src={css} alt="" />
-                </div>
-                <p>Css</p>
-              </div>
-
-              <div className="iconsDiv">
-              <div className="divImagemIcone">
-                <img src={javaS} alt="" />
-                </div>
-                <p>Javascript</p>
-              </div>
-              <div className="iconsDiv">
-              <div className="divImagemIcone">
-                <img src={react} alt="" />
-                </div>
-                <p>React</p>
-              </div>
-
-              <div className="iconsDiv">
-              <div className="divImagemIcone">
-                <img src={node} alt="" />
-                </div>
-                <p>Node</p>
-              </div>
-              <div className="iconsDiv">
-              <div className="divImagemIcone">
-                <img src={java} alt="" />
-                </div>
-                <p>Java</p>
-              </div>
-              <div className="iconsDiv">
-              <div className="divImagemIcone">
-                <img src={spring} alt="" />
-                </div>
-                <p>Spring</p>
-              </div>
-              <div className="iconsDiv">
-                <div className="divImagemIcone">
-                <img src={typescript} alt="" />
-                </div>
-                <p>Typescript</p>
-              </div>
-            </div>
+          <ContentIconsHardSkills>
 
 
-          </div>
-        </div>
-      </main>
+            <AllIconsTogether>
+
+              <IconsAboutMe
+                title='Html'
+                src={HtmlSvg}
+                alt='Icone do HTML'
+              />
+
+              <IconsAboutMe
+                title='Css'
+                src={CssSvg}
+                alt='Icone do Css'
+              />
+
+              <IconsAboutMe
+                title='Javascript'
+                src={JavasSvg}
+                alt='Icone do Javascript'
+              />
+
+              <IconsAboutMe
+                title='React'
+                src={ReactSvg}
+                alt='Icone do ReactJs'
+              />
+
+              <IconsAboutMe
+                title='Node'
+                src={NodeSvg}
+                alt='Icone do NodeJs'
+              />
+
+              <IconsAboutMe
+                title='Java'
+                src={JavaSvg}
+                alt='Icone do Java'
+              />
+
+              <IconsAboutMe
+                title='Spring'
+                src={SpringSvg}
+                alt='Icone do HTML'
+              />
+
+              <IconsAboutMe
+                title='Typescript'
+                src={TypescriptSvg}
+                alt='Icone do Typescript'
+              />
+
+            </AllIconsTogether>
+
+
+          </ContentIconsHardSkills>
+        </ContentHardSkills>
+      </ContentMain>
+
     </Container>
   );
 }

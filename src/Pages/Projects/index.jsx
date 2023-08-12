@@ -1,17 +1,24 @@
-import { Container } from './style';
+import {
+    Container,
+    IconMenuClose,
+    Carousel,
+    ContentMain,
+    ContentCarrousel,
+    ContentGalery,
+
+} from './style';
+
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+
 import { useRef, useEffect, useState } from 'react';
 import { isMobile, isTablet } from 'react-device-detect';
 
 import { Header } from '../../Componentes/Header'
 import { SwipeScreenWarning } from '../../Componentes/SwipeScreenWarning';
+import { CardProjects } from '../../Componentes/CardProjects';
 
 
 
-import html from '../../assets/html.svg';
-import css from '../../assets/css.svg';
-import javaS from '../../assets/javascript.svg';
-import reactjs from '../../assets/react.svg'
-import swipe from '../../assets/swipe.png';
 import screenInitial from '../../assets/screenInitialCavaleiros.png';
 import screenInitialGym from '../../assets/screenInitialGymProject.png';
 
@@ -20,21 +27,18 @@ export function Projects() {
 
     const [mounted, setMounted] = useState(false);
     const buttonMenu = useRef('');
-    const galeryRef = useRef('');
     const mainLabel = useRef('');
-    const projetos = document.querySelectorAll(".galery .projetos");
+
     const headerComp = document.getElementById("headerPage");
 
-    let idx = 0;
-    let startX;
-    let moved = false;
-    let i;
-    
-   const fecharMenu = () => {
-    headerComp.classList.remove("open")
-    buttonMenu.current.innerHTML = "menu"
-   }
-    const toggleHeader = () => {
+  
+
+    const handleCloseMenu = () => {
+        headerComp.classList.remove("open")
+        buttonMenu.current.innerHTML = "menu"
+    }
+
+    const handleToggleHeader = () => {
         if (headerComp.classList.contains("open")) {
             headerComp.classList.remove("open")
             buttonMenu.current.innerHTML = "menu"
@@ -46,57 +50,19 @@ export function Projects() {
         }
     }
 
-    
+
     const closeSwipeWarning = () => {
         setSwipeScreenWarning(false)
     }
 
-
-
-
     useEffect(() => {
 
         if (mounted) {
-              
-            if(isMobile | isTablet) {
-               setSwipeScreenWarning(true);
+
+            if (isMobile | isTablet) {
+                setSwipeScreenWarning(true);
             }
-            
 
-            galeryRef.current.addEventListener("touchstart", (event) => {
-                startX = event.touches[0].clientX;
-                moved = false;
-            });
-
-            galeryRef.current.addEventListener("touchmove", (event) => {
-                if (!moved) {
-                    const currentX = event.touches[0].clientX;
-                    const diffX = startX - currentX;
-
-                    if (diffX > 20) {
-                        idx++;
-                        if (idx > projetos.length - 1) {
-                            for (i = 0; i < projetos.length; i++) {
-                                idx = projetos.length - (i + 1);
-                            }
-                        }
-                        moved = true;
-                    }
-
-                    else if (diffX < -20) {
-                        idx--;
-                        if (idx < 0) {
-                            idx = projetos.length - 1;
-                        }
-                        moved = true;
-                    }
-                    galeryRef.current.style.transform = `translateX(${-idx * 95}vw)`;
-                    startX = currentX;
-                }
-
-            });
-
-            buttonMenu.current.addEventListener('touchstart', toggleHeader);
 
         }
         else {
@@ -110,69 +76,99 @@ export function Projects() {
     return (
         <Container ref={mainLabel}>
             <Header />
-            <span ref={buttonMenu} id="menuFechado" className="material-symbols-outlined">
+
+            <IconMenuClose
+                id="menuFechado"
+                className="material-symbols-outlined"
+                ref={buttonMenu}
+                onClick={handleToggleHeader}
+            >
                 menu
-            </span>
-            <main onClick={fecharMenu}>
-                <div className="carrosel">
-                    <div ref={galeryRef} className="galery">
-                        <div className="projetos">
+            </IconMenuClose>
 
-                            <div className="imgProjeto">
-                                <img src={screenInitial} alt="foto da pagina inicial do meu site dos cavaleiros" />
-                            </div>
 
-                            <div className="infoProjeto">
-                                <h1>Os cavaleiros de ouro</h1>
+            <ContentMain onClick={handleCloseMenu}>
 
-                                <p>É um site feito para os fãs de Os cavaleiros dos zodíacos,que desejam conhecer um pouquinho melhor os 12 cavaleiros de ouro, esse site consome uma api feita em node por mim.</p>
+                {
+                    isMobile ?
+                        <Carousel
+                            showArrows={true}
+                            showThumbs={false}
+                        >
 
-                                <div className="iconesProjeto">
-                                    <img src={html} alt="icone html" />
-                                    <img src={css} alt="icone css" />
-                                    <img src={reactjs} alt="icone javascript" />
-                                </div>
+                            <CardProjects
+                                src={screenInitial}
+                                alt={'foto pagina incial do meu site dos cavaleiros dos zodiacos'}
 
-                                <div className="buttonsProjeto">
-                                    <a href="https://react-caveleiros-zodiacos-krcvrfoup-akihito7.vercel.app" target='_blank'><button>Deploy</button></a>
+                                title={'Os cavaleiros de ouro'}
 
-                                    <a href="https://github.com/Akihito7/react_caveleiros_zodiacos" target='_blank'><button id="btcode">Code</button></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="projetos">
+                                description='É um site feito para os fãs de Os cavaleiros dos zodíacos,que desejam conhecer um pouquinho melhor os 12 cavaleiros de ouro, esse site consome uma api feita em node por mim.'
 
-                            <div className="imgProjeto">
-                                <img src={screenInitialGym} alt="imagem da pagina inicial do meu site gym" />
-                            </div>
+                                srcIcon={['html', 'css', 'react']}
 
-                            <div className="infoProjeto">
-                                <h1>Gym page</h1>
+                                hrefDeploy='https://react-caveleiros-zodiacos-krcvrfoup-akihito7.vercel.app'
 
-                                <p>Domine a era da tecnologia! Impulsione sua academia para o sucesso com um site incrível de tirar o fôlego! atraia muitos clientes com matrículas práticas e rápidas.</p>
+                                hrefCode='https://github.com/Akihito7/react_caveleiros_zodiacos'
+                            />
 
-                                <div className="iconesProjeto">
-                                    <img src={html} alt="icone html" />
-                                    <img src={css} alt="icone css" />
-                                    <img src={reactjs} alt="icone javascript" />
-                                </div>
+                            <CardProjects
+                                src={screenInitialGym}
 
-                                <div className="buttonsProjeto">
-                                    <a href="https://gym-project-beta.vercel.app" target='_blank'><button>Deploy</button></a>
+                                title={'Gym Page'}
+                                description='Domine a era da tecnologia! Impulsione sua academia para o sucesso com um site incrível de tirar o fôlego! atraia muitos clientes com matrículas práticas e rápidas.'
 
-                                    <a href="https://github.com/Akihito7/gymProject" target='_blank'><button id="btcode">Code</button></a>
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-                </div>
+                                srcIcon={['html', 'css', 'react']}
 
-            <SwipeScreenWarning
-             isVisible={swipeScreenWarning}
-             onPress={closeSwipeWarning}
-             />
-            </main>
+                                hrefDeploy='https://gym-project-beta.vercel.app'
+                                hrefCode='https://github.com/Akihito7/gymProject'
+
+                            />
+                        </Carousel>
+
+                        :
+
+
+                        <ContentCarrousel>
+                            <ContentGalery>
+                                <CardProjects
+                                    src={screenInitial}
+                                    alt={'foto pagina incial do meu site dos cavaleiros dos zodiacos'}
+
+                                    title={'Os cavaleiros de ouro'}
+
+                                    description='É um site feito para os fãs de Os cavaleiros dos zodíacos,que desejam conhecer um pouquinho melhor os 12 cavaleiros de ouro, esse site consome uma api feita em node por mim.'
+
+                                    srcIcon={['html', 'css', 'react']}
+
+                                    hrefDeploy='https://react-caveleiros-zodiacos-krcvrfoup-akihito7.vercel.app'
+
+                                    hrefCode='https://github.com/Akihito7/react_caveleiros_zodiacos'
+                                />
+
+                                <CardProjects
+                                    src={screenInitialGym}
+
+                                    title={'Gym Page'}
+                                    description='Domine a era da tecnologia! Impulsione sua academia para o sucesso com um site incrível de tirar o fôlego! atraia muitos clientes com matrículas práticas e rápidas.'
+
+                                    srcIcon={['html', 'css', 'react']}
+
+                                    hrefDeploy='https://gym-project-beta.vercel.app'
+                                    hrefCode='https://github.com/Akihito7/gymProject'
+
+                                />
+                            </ContentGalery>
+                        </ContentCarrousel>
+                }
+
+
+
+                <SwipeScreenWarning
+                    isVisible={swipeScreenWarning}
+                    onPress={closeSwipeWarning}
+                />
+
+            </ContentMain>
 
 
 

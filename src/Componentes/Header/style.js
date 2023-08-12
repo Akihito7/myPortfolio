@@ -65,6 +65,7 @@ img:hover{
     align-items: center;
     padding-right: 1.4rem;
 
+
 li{
     font-size: 1.4rem;
 }
