@@ -1,47 +1,113 @@
-import { Container } from "./style"
-import { useNavigate } from "react-router-dom"
 import { useEffect, useRef, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { useLocation } from "react-router-dom"
+
+import {
+    Container,
+    ListScreens,
+    ItemListScreens,
+    ContentContacts,
+    LinkContacts,
+    ImagemContacts,
+
+} from "./style"
+
+import { useScreenSelected } from "../../contexts/screenSelected"
+
+
 import github from '../../assets/github.svg'
 import linkedin from '../../assets/linkedin.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import email from '../../assets/email.svg'
 
-export function Header(){
-    
-    const labelHeader = useRef();
+export function Header() {
+
     const navigateTo = useNavigate();
-    const location = useLocation();
-
-    const [currentPage, setCurrentPage] = useState('/');
-
-    useEffect(() => {
-       setCurrentPage(location.pathname);
-    })
  
+
+    const { screenSelected, setScreenSelected } = useScreenSelected();
+
     return (
-        <Container ref={labelHeader} id="headerPage">
-            <ul>
-                <li className={currentPage === "/" ? "paginaAtual" : ""} 
-                onClick={() => navigateTo("/")}>Home</li>
-                
-                <li className={currentPage === "/about" ? "paginaAtual" : ""}
-                onClick={() => navigateTo('/about')}>Sobre mim</li>
+        <Container id="headerPage">
+            <ListScreens>
+                <ItemListScreens
 
-                <li className={currentPage === "/projects" ? "paginaAtual" : ""}
-                onClick={() => navigateTo("/projects")}>Projetos</li>
-            </ul>
+                    isSelecioned={screenSelected === '/'}
+                    onClick={() => {
+                        setScreenSelected('/')
+                        navigateTo('/')
+                    }}
 
-            <div className="iconesContatos">
+                >
+                    Home
+                </ItemListScreens>
 
-                <a href="https://github.com/Akihito7" target="_blank"><img src={github} alt="icone do github"/></a>
+                <ItemListScreens
 
-                <a href="https://www.linkedin.com/in/guilherme-akihito-b1536125a/" target="_blank"> <img src={linkedin} alt="icone do linkedin" /></a>
+                    isSelecioned={screenSelected === 'about'}
+                    onClick={() => {
+                        setScreenSelected('about');
+                        navigateTo('/about');
+                    }}
 
-               <a href="https://wa.link/frbwzz" target="_blank"><img src={whatsapp} alt="icone do whatsapp" /></a>
-                <a href="mailto:akihitopo7@gmail.com"><img src={email} alt="icone de um envelope" /></a>
-          
-            </div>
+                >
+                    Sobre mim
+                </ItemListScreens>
+
+                <ItemListScreens
+
+                    isSelecioned={screenSelected === 'projects'}
+                    onClick={() => {
+                        setScreenSelected("projects");
+                        navigateTo("/projects");
+
+                    }}
+
+                >
+                    Projetos
+                </ItemListScreens>
+            </ListScreens>
+
+            <ContentContacts className="iconesContatos">
+
+                <LinkContacts
+                    href="https://github.com/Akihito7"
+                    target="_blank"
+                >
+                    <ImagemContacts
+                        src={github}
+                        alt="icone do github"
+                    />
+                </LinkContacts>
+
+                <LinkContacts
+                    href="https://www.linkedin.com/in/guilherme-akihito-b1536125a/"
+                    target="_blank">
+                    <ImagemContacts
+                        src={linkedin}
+                        alt="icone do linkedin"
+                    />
+                </LinkContacts>
+
+                <LinkContacts
+                    href="https://wa.link/frbwzz"
+                    target="_blank"
+                >
+                    <ImagemContacts
+                        src={whatsapp}
+                        alt="icone do whatsapp"
+                    />
+                </LinkContacts>
+
+                <LinkContacts
+                    href="mailto:akihitopo7@gmail.com">
+                    <ImagemContacts
+                        src={email}
+                        alt="icone de um envelope"
+                    />
+                </LinkContacts>
+
+            </ContentContacts>
         </Container>
     )
 }

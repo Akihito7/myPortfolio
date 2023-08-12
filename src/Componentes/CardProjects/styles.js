@@ -112,6 +112,7 @@ text-align: justify;
 export const TitleInformation = styled.div`
 
 font-size: 2em;
+margin-bottom: 1rem;
 
 //Version mobile
 
