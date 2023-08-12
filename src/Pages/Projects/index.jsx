@@ -31,7 +31,7 @@ export function Projects() {
 
     const headerComp = document.getElementById("headerPage");
 
-  
+
 
     const handleCloseMenu = () => {
         headerComp.classList.remove("open")
@@ -87,7 +87,17 @@ export function Projects() {
             </IconMenuClose>
 
 
-            <ContentMain onClick={handleCloseMenu}>
+            <ContentMain
+                onClick={() => {
+                    handleCloseMenu();
+                    closeSwipeWarning();
+                }}
+                
+                onTouchStart={() => {
+                    handleCloseMenu();
+                    closeSwipeWarning();
+                }}
+            >
 
                 {
                     isMobile ?
