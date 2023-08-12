@@ -102,7 +102,7 @@ export function Projects() {
 
                                 title={'Os cavaleiros de ouro'}
 
-                                description='É um site feito para os fãs de Os cavaleiros dos zodíacos,que desejam conhecer um pouquinho melhor os 12 cavaleiros de ouro, esse site consome uma api feita em node por mim.'
+                                description='Site feito para os fãs de Os cavaleiros dos zodíacos,que desejam conhecer um pouco melhor os 12 cavaleiros de ouro, esse site consome uma api feita em node por mim.'
 
                                 srcIcon={['html', 'css', 'react']}
 
