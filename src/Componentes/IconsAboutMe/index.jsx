@@ -6,6 +6,8 @@ import {
     
 } from './style'
 
+
+
 export function IconsAboutMe({ src, alt, title }) {
     return (
 

@@ -217,6 +217,12 @@ border: none;
 cursor: pointer;
 transition: transform 300ms ease-in-out;
 
+//hover
+
+:hover{
+    transform: scale(1.1);
+}
+
 //Version mobile
 
 @media(max-width: 786px){

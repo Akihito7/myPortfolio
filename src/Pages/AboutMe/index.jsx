@@ -20,6 +20,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 import { IconsAboutMe } from '../../Componentes/IconsAboutMe';
+import { Icons } from '../../utils/icons';
 
 import HtmlSvg from '../../assets/html.svg';
 import CssSvg from '../../assets/css.svg';
@@ -29,6 +30,17 @@ import NodeSvg from '../../assets/node.svg';
 import JavaSvg from '../../assets/java.svg';
 import SpringSvg from '../../assets/springBoot.svg';
 import TypescriptSvg from '../../assets/typescript.svg'
+
+const IconsSvg = {
+  html :HtmlSvg,
+  css :CssSvg,
+  javascript :JavasSvg ,
+  react:ReactSvg ,
+  node:NodeSvg,
+  java:JavaSvg,
+  spring:SpringSvg,
+  typescript:TypescriptSvg,
+}
 
 export function AboutMe() {
 
@@ -120,53 +132,18 @@ export function AboutMe() {
 
             <AllIconsTogether>
 
-              <IconsAboutMe
-                title='Html'
-                src={HtmlSvg}
-                alt='Icone do HTML'
-              />
+              {
+                Icons ? Icons.map(icon => (
+                  <IconsAboutMe
+                  title={icon.name}
+                  src={IconsSvg[icon.src]}
+                  alt={icon.alt}
+                />
 
-              <IconsAboutMe
-                title='Css'
-                src={CssSvg}
-                alt='Icone do Css'
-              />
+                )) :
 
-              <IconsAboutMe
-                title='Javascript'
-                src={JavasSvg}
-                alt='Icone do Javascript'
-              />
-
-              <IconsAboutMe
-                title='React'
-                src={ReactSvg}
-                alt='Icone do ReactJs'
-              />
-
-              <IconsAboutMe
-                title='Node'
-                src={NodeSvg}
-                alt='Icone do NodeJs'
-              />
-
-              <IconsAboutMe
-                title='Java'
-                src={JavaSvg}
-                alt='Icone do Java'
-              />
-
-              <IconsAboutMe
-                title='Spring'
-                src={SpringSvg}
-                alt='Icone do HTML'
-              />
-
-              <IconsAboutMe
-                title='Typescript'
-                src={TypescriptSvg}
-                alt='Icone do Typescript'
-              />
+                ""
+              }
 
             </AllIconsTogether>
 
