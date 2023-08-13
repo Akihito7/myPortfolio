@@ -75,7 +75,7 @@ flex-wrap: wrap;
 gap: 2rem;
 
 `
-export const LinkContacts = styled.div`
+export const LinkContacts = styled.a`
 
 `
 export const ImagemContacts = styled.img`
